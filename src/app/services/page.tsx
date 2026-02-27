@@ -97,15 +97,23 @@ export default function ServicesPage() {
           </h2>
           <p className="mt-4 text-base text-[var(--gray-500)]">
             The best method depends on your design complexity, garment type,
-            order size, and budget. Contact us and we&apos;ll recommend the
-            right approach for your project.
+            order size, and budget. Compare all four methods side by side, or
+            contact us for a personalized recommendation.
           </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-block rounded-lg bg-primary px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-primary-dark"
-          >
-            Get Expert Guidance
-          </Link>
+          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <Link
+              href="/resources/method-comparison"
+              className="w-full rounded-lg bg-primary px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-primary-dark sm:w-auto"
+            >
+              Compare Methods
+            </Link>
+            <Link
+              href="/contact"
+              className="w-full rounded-lg border border-[var(--gray-600)] px-8 py-4 text-base font-semibold text-[var(--gray-700)] transition-colors hover:bg-[var(--gray-100)] sm:w-auto"
+            >
+              Get Expert Guidance
+            </Link>
+          </div>
         </div>
       </section>
     </>

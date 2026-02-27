@@ -110,3 +110,77 @@ export function BreadcrumbJsonLd({
     />
   );
 }
+
+export function ArticleJsonLd({
+  title,
+  description,
+  url,
+  datePublished,
+  author,
+}: {
+  title: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  author: string;
+}) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    url: `https://theapparellab.com${url}`,
+    datePublished,
+    author: {
+      "@type": "Organization",
+      name: author,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "The Apparel Lab",
+      url: "https://theapparellab.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://theapparellab.com/logo.png",
+      },
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+export function BlogJsonLd({
+  posts,
+}: {
+  posts: { title: string; url: string; datePublished: string }[];
+}) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "The Apparel Lab Blog",
+    url: "https://theapparellab.com/resources/blog",
+    publisher: {
+      "@type": "Organization",
+      name: "The Apparel Lab",
+      url: "https://theapparellab.com",
+    },
+    blogPost: posts.map((post) => ({
+      "@type": "BlogPosting",
+      headline: post.title,
+      url: `https://theapparellab.com${post.url}`,
+      datePublished: post.datePublished,
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}

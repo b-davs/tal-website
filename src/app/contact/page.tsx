@@ -2,6 +2,7 @@
 
 import type { FormEvent } from "react";
 import { useState } from "react";
+import { trackGenerateLead } from "@/lib/analytics";
 
 const serviceOptions = [
   "Screen Printing",
@@ -25,6 +26,7 @@ export default function ContactPage() {
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    trackGenerateLead("quote");
     // TODO: wire up to form handler / API route
     setSubmitted(true);
   }

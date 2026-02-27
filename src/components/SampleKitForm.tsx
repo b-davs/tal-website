@@ -2,6 +2,7 @@
 
 import type { FormEvent } from "react";
 import { useState } from "react";
+import { trackGenerateLead } from "@/lib/analytics";
 
 const kitOptions = [
   "Method Comparison Kit",
@@ -21,6 +22,7 @@ export default function SampleKitForm() {
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    trackGenerateLead("sample-kit");
     // TODO: wire up to form handler / API route
     setSubmitted(true);
   }

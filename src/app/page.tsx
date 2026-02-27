@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { industries } from "@/data/industries";
 
 const services = [
   {
@@ -237,6 +238,44 @@ export default function Home() {
               className="text-base font-medium text-primary hover:text-primary-dark"
             >
               View all projects &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Industries We Serve */}
+      <section className="px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-[var(--gray-900)] sm:text-4xl">
+              Industries We Serve
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base text-[var(--gray-500)]">
+              Tailored apparel solutions for the industries that need them most.
+            </p>
+          </div>
+          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {industries.map((industry) => (
+              <Link
+                key={industry.slug}
+                href={`/industries/${industry.slug}`}
+                className="group rounded-xl border border-[var(--gray-200)] p-5 transition-all hover:border-primary hover:shadow-md"
+              >
+                <h3 className="text-base font-semibold text-[var(--gray-900)] group-hover:text-primary">
+                  {industry.name}
+                </h3>
+                <p className="mt-1 text-sm leading-6 text-[var(--gray-500)]">
+                  {industry.description.split(".")[0]}.
+                </p>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/industries"
+              className="text-base font-medium text-primary hover:text-primary-dark"
+            >
+              View all industries &rarr;
             </Link>
           </div>
         </div>

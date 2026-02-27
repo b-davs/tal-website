@@ -14,16 +14,23 @@ const companyLinks = [
   { href: "/services", label: "Services" },
   { href: "/pricing", label: "Pricing" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/faqs", label: "FAQs" },
   { href: "/sample-kit", label: "Sample Kit" },
   { href: "/contact", label: "Contact" },
+];
+
+const resourceLinks = [
+  { href: "/industries", label: "Industries" },
+  { href: "/resources", label: "Resources & Guides" },
+  { href: "/resources/method-comparison", label: "Method Comparison" },
+  { href: "/resources/blog", label: "Blog" },
+  { href: "/faqs", label: "FAQs" },
 ];
 
 export default function Footer() {
   return (
     <footer className="border-t border-[var(--gray-200)] bg-[var(--gray-50)]">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Image
@@ -64,6 +71,25 @@ export default function Footer() {
             </h3>
             <ul className="mt-3 space-y-2">
               {companyLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-[var(--gray-500)] transition-colors hover:text-[var(--gray-900)]"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="text-sm font-semibold text-[var(--gray-900)]">
+              Resources
+            </h3>
+            <ul className="mt-3 space-y-2">
+              {resourceLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

@@ -98,13 +98,17 @@ Status key: `[ ]` = not started, `[~]` = in progress, `[x]` = done
 - [x] JSON-LD for Service, FAQPage schemas
 - [x] Sample kit request flow
 
-### Slice 3 — Growth (NEXT)
+### Slice 3 — Growth (DONE)
 
-- [ ] Industry vertical pages (6: construction, healthcare, hospitality, education, nonprofits, corporate)
-- [ ] Resources/guides hub
-- [ ] Method comparison tool (screen vs DTG vs DTF vs embroidery)
-- [ ] Blog infrastructure
-- [ ] Analytics integration (GA4 + Search Console)
+- [x] Industry vertical pages (6: construction, healthcare, hospitality, education, nonprofits, corporate)
+- [x] Resources/guides hub (4 guides: artwork, turnaround, logo placement, care & durability)
+- [x] Method comparison tool (interactive, responsive table/cards)
+- [x] Blog infrastructure (data-driven, listing + detail pages under /resources/blog/)
+- [x] Analytics integration (GA4 env-var gated, lead tracking on forms)
+- [x] Header restructured (Resources dropdown with sub-items)
+- [x] Footer updated (Resources link column)
+- [x] Home page updated (Industries We Serve section)
+- [x] JSON-LD for Article, Blog schemas
 
 ### NOT in v1 (explicitly deferred)
 
