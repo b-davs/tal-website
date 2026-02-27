@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
-import { BreadcrumbJsonLd } from "@/components/JsonLd";
+import { BreadcrumbJsonLd, ServiceJsonLd, FAQPageJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Custom DTG Printing for Businesses",
@@ -12,6 +12,22 @@ export default function DTGPrintingPage() {
   return (
     <>
     <BreadcrumbJsonLd items={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: "DTG Printing", href: "/services/dtg-printing" }]} />
+    <ServiceJsonLd
+      name="Custom DTG Printing"
+      description="Direct-to-garment printing with photographic quality. No minimums on select products. Perfect for detailed, full-color designs on cotton apparel."
+      url="/services/dtg-printing"
+      serviceType="DTG Printing"
+    />
+    <FAQPageJsonLd faqs={[
+      { question: "What is DTG printing?", answer: "DTG (Direct-to-Garment) printing uses modified inkjet technology to spray water-based ink directly into the fabric. The result is a soft print with high detail — similar to printing a photo on fabric." },
+      { question: "Is there a minimum order for DTG?", answer: "No minimums on select products. DTG is one of the few methods where ordering a single custom piece is practical and cost-effective." },
+      { question: "Does DTG work on dark shirts?", answer: "Yes — dark garments require a white underbase layer printed first, then your design on top. This adds slightly to cost but produces vibrant results on any garment color." },
+      { question: "How does DTG feel on the shirt?", answer: "DTG has the softest hand feel of any printing method. The ink bonds with the cotton fibers rather than sitting on top, so you barely feel the print." },
+      { question: "How long do DTG prints last?", answer: "With proper care (wash inside-out, cold water, tumble dry low), DTG prints last 50+ washes. The print softens over time, similar to a vintage tee feel." },
+      { question: "Why does DTG work best on cotton?", answer: "The water-based inks used in DTG are designed to bond with natural cellulose fibers. Polyester and synthetics repel these inks, resulting in poor adhesion and color. For synthetics, we recommend DTF instead." },
+      { question: "DTG vs screen printing — when should I choose DTG?", answer: "Choose DTG for small orders (under 24 pieces), highly detailed or photographic designs, or when you need no-minimum flexibility. Screen printing wins on cost at higher volumes with limited colors." },
+      { question: "Can I print the same design in different sizes?", answer: "Yes — since there are no screens to set up, scaling a design for different garment sizes is simple and doesn't affect pricing." },
+    ]} />
     <ServicePageLayout
       title="Custom DTG Printing for Businesses"
       subtitle="DTG Printing"

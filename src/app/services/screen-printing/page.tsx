@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
-import { BreadcrumbJsonLd } from "@/components/JsonLd";
+import { BreadcrumbJsonLd, ServiceJsonLd, FAQPageJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Custom Screen Printing for Businesses",
@@ -12,6 +12,22 @@ export default function ScreenPrintingPage() {
   return (
     <>
     <BreadcrumbJsonLd items={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: "Screen Printing", href: "/services/screen-printing" }]} />
+    <ServiceJsonLd
+      name="Custom Screen Printing"
+      description="High-quality custom screen printing for bulk orders. Vibrant, durable prints on t-shirts, hoodies, workwear, and more."
+      url="/services/screen-printing"
+      serviceType="Screen Printing"
+    />
+    <FAQPageJsonLd faqs={[
+      { question: "What is the minimum order for screen printing?", answer: "Our standard minimum is 24 pieces per design. This allows us to keep per-unit costs low since screen setup is a fixed cost that spreads across the run." },
+      { question: "How much does screen printing cost?", answer: "Pricing depends on the number of ink colors, print locations, quantity, and garment choice. A single-color print on 72+ tees is our most cost-effective option. Contact us for a quote specific to your project." },
+      { question: "Can you print on dark-colored shirts?", answer: "Yes. We use an underbase (white ink layer) beneath your design colors to ensure vibrancy on dark garments. This counts as an additional color in pricing." },
+      { question: "What file format do you need?", answer: "Vector files (AI, EPS, PDF) produce the best results. We also accept high-resolution PNG and PSD files (300+ DPI). We'll let you know if your file needs adjustments." },
+      { question: "Can you match my brand colors exactly?", answer: "Yes — we mix custom Pantone (PMS) ink colors to match your brand guidelines. Provide your PMS codes for the most accurate match." },
+      { question: "How long does screen printing take?", answer: "Standard turnaround is 7–10 business days after proof approval. Rush options (3–5 days) are available depending on capacity." },
+      { question: "Do you offer samples before a full order?", answer: "Yes, we can produce a pre-production sample for your approval before running the full order. Additional charges may apply." },
+      { question: "What's the difference between screen printing and DTG?", answer: "Screen printing is best for bulk orders with limited colors — it's more durable and cost-effective at scale. DTG is better for small runs with complex, full-color artwork. We can help you choose." },
+    ]} />
     <ServicePageLayout
       title="Custom Screen Printing for Businesses"
       subtitle="Screen Printing"

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
-import { BreadcrumbJsonLd } from "@/components/JsonLd";
+import { BreadcrumbJsonLd, ServiceJsonLd, FAQPageJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Custom Embroidery for Businesses",
@@ -12,6 +12,22 @@ export default function EmbroideryPage() {
   return (
     <>
     <BreadcrumbJsonLd items={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: "Embroidery", href: "/services/embroidery" }]} />
+    <ServiceJsonLd
+      name="Custom Embroidery"
+      description="Professional custom embroidery for polos, hats, jackets, and workwear. Durable stitched logos with a premium look."
+      url="/services/embroidery"
+      serviceType="Embroidery"
+    />
+    <FAQPageJsonLd faqs={[
+      { question: "What is digitizing and why is there a fee?", answer: "Digitizing converts your logo from an image file into a stitch file that tells the embroidery machine exactly where to place each stitch. It's a one-time fee — we keep your file on record for all future orders." },
+      { question: "What is the minimum order for embroidery?", answer: "Our standard minimum is 12 pieces per design. For hat embroidery, minimums may vary by style. Contact us for specifics." },
+      { question: "How much does embroidery cost?", answer: "Pricing is based on stitch count, thread colors, quantity, and placement. A simple left-chest logo on polos is our most common and cost-effective option. Request a quote for exact pricing." },
+      { question: "Can you embroider my existing garments?", answer: "Yes — we accept customer-supplied garments. We'll confirm they're compatible with embroidery before proceeding. A handling fee may apply." },
+      { question: "How detailed can the embroidery be?", answer: "Embroidery works best for logos, text, and simple icons. Very fine details (thin lines under 1mm, tiny text, gradients) may need to be simplified for clean results." },
+      { question: "Will my logo look exactly like the digital file?", answer: "Thread has a different texture than ink or pixels, so the look is slightly different by nature — that's part of the appeal. We optimize your digitized file so it looks its best in thread form." },
+      { question: "Can I get different names on each garment?", answer: "Yes — individual name and title personalization is available. We'll set up a roster and stitch each piece accordingly." },
+      { question: "Do you keep my logo on file for reorders?", answer: "Yes. Once digitized, your logo is stored permanently. Reorders skip the digitizing fee and often ship faster." },
+    ]} />
     <ServicePageLayout
       title="Custom Embroidery for Businesses"
       subtitle="Embroidery"

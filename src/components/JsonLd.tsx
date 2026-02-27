@@ -24,6 +24,69 @@ export function OrganizationJsonLd() {
   );
 }
 
+export function ServiceJsonLd({
+  name,
+  description,
+  url,
+  serviceType,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  serviceType: string;
+}) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    url: `https://theapparellab.com${url}`,
+    serviceType,
+    provider: {
+      "@type": "Organization",
+      name: "The Apparel Lab",
+      url: "https://theapparellab.com",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "US",
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+export function FAQPageJsonLd({
+  faqs,
+}: {
+  faqs: { question: string; answer: string }[];
+}) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
 export function BreadcrumbJsonLd({
   items,
 }: {

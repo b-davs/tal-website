@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
-import { BreadcrumbJsonLd } from "@/components/JsonLd";
+import { BreadcrumbJsonLd, ServiceJsonLd, FAQPageJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Custom Promotional Items & Branded Merchandise",
@@ -12,6 +12,22 @@ export default function PromotionalItemsPage() {
   return (
     <>
     <BreadcrumbJsonLd items={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: "Promotional Items", href: "/services/promotional-items" }]} />
+    <ServiceJsonLd
+      name="Custom Promotional Items & Branded Merchandise"
+      description="Custom promotional products for businesses — drinkware, bags, pens, tech accessories, and branded kits for events, onboarding, and trade shows."
+      url="/services/promotional-items"
+      serviceType="Promotional Products"
+    />
+    <FAQPageJsonLd faqs={[
+      { question: "What's the minimum order for promotional items?", answer: "Minimums vary by product — typically 25–50 pieces for most items. Some premium items have higher minimums. We'll confirm when you request a quote." },
+      { question: "Can you assemble custom kits?", answer: "Yes — kitting is one of our specialties. We source, brand, and assemble multi-item kits (onboarding, trade show, safety, appreciation) and can ship to one location or drop-ship individually." },
+      { question: "How far in advance should I order?", answer: "For standard orders, plan 2–3 weeks from approval to delivery. For large events or custom kits, 4–6 weeks is recommended. Rush options are available for many products." },
+      { question: "Can I see a sample before committing?", answer: "Yes — we can provide unbranded stock samples for most products so you can evaluate quality before placing a full order. Sample costs may apply but are often credited toward your order." },
+      { question: "Do you offer eco-friendly promotional items?", answer: "Yes — we carry a growing selection of sustainable products including bamboo, recycled materials, and reusable alternatives. Let us know if sustainability is a priority for your project." },
+      { question: "Can you combine apparel and promo items in one order?", answer: "Absolutely — this is where we add the most value. We can bundle branded apparel with promotional items into cohesive kits, all produced and shipped together." },
+      { question: "What decoration methods are used for promo items?", answer: "It depends on the product: screen print and pad print for plastics and fabrics, laser engraving for metal and glass, full-color digital for complex artwork, and debossing for leather goods." },
+      { question: "Can you drop-ship to multiple addresses?", answer: "Yes — we support multi-address drop shipping for kits and individual items. Shipping fees apply per destination." },
+    ]} />
     <ServicePageLayout
       title="Custom Promotional Items & Branded Merch"
       subtitle="Promotional Items"

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FAQAccordion from "@/components/FAQAccordion";
 
 interface FAQ {
   question: string;
@@ -226,20 +227,8 @@ export default function ServicePageLayout({
           <h2 className="text-2xl font-bold text-[var(--gray-900)] sm:text-3xl">
             Frequently Asked Questions
           </h2>
-          <div className="mt-8 divide-y divide-[var(--gray-200)]">
-            {faqs.map((faq) => (
-              <details key={faq.question} className="group py-4">
-                <summary className="flex cursor-pointer items-center justify-between text-base font-medium text-[var(--gray-900)]">
-                  {faq.question}
-                  <span aria-hidden="true" className="ml-4 text-[var(--gray-400)] transition-transform group-open:rotate-45">
-                    +
-                  </span>
-                </summary>
-                <p className="mt-3 text-sm leading-6 text-[var(--gray-500)]">
-                  {faq.answer}
-                </p>
-              </details>
-            ))}
+          <div className="mt-8">
+            <FAQAccordion faqs={faqs} />
           </div>
         </div>
       </section>

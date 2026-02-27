@@ -59,6 +59,27 @@ const steps = [
   },
 ];
 
+const featuredProjects = [
+  {
+    title: "500 Embroidered Polos for Healthcare Network",
+    service: "Embroidery",
+    description: "Unified staff uniforms across 12 locations with consistent logo placement and quality.",
+    icon: "🧵",
+  },
+  {
+    title: "1,200 Event Tees for Tech Conference",
+    service: "Screen Printing",
+    description: "4-color front print + sponsor wall on back. Delivered 3 days ahead of schedule.",
+    icon: "🖨️",
+  },
+  {
+    title: "New Hire Onboarding Kits for SaaS Company",
+    service: "Promotional Items",
+    description: "Custom kits with DTF hoodie, embroidered cap, branded notebook, and tumbler.",
+    icon: "🎁",
+  },
+];
+
 const trustPoints = [
   { label: "Orders Completed", value: "10,000+" },
   { label: "Business Clients", value: "500+" },
@@ -171,6 +192,92 @@ export default function Home() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio preview */}
+      <section className="bg-[var(--gray-50)] px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-[var(--gray-900)] sm:text-4xl">
+              Recent Projects
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base text-[var(--gray-500)]">
+              Real work for real businesses. See what we&apos;ve produced for
+              companies across industries.
+            </p>
+          </div>
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {featuredProjects.map((project) => (
+              <div
+                key={project.title}
+                className="rounded-xl border border-[var(--gray-200)] bg-white p-6"
+              >
+                <div className="mb-4 flex h-32 items-center justify-center rounded-lg bg-[var(--gray-100)]">
+                  <span className="text-3xl text-[var(--gray-300)]" aria-hidden="true">
+                    {project.icon}
+                  </span>
+                </div>
+                <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+                  {project.service}
+                </span>
+                <h3 className="mt-2 text-base font-semibold text-[var(--gray-900)]">
+                  {project.title}
+                </h3>
+                <p className="mt-1 text-sm text-[var(--gray-500)]">
+                  {project.description}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/portfolio"
+              className="text-base font-medium text-primary hover:text-primary-dark"
+            >
+              View all projects &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Sample kit CTA */}
+      <section className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <div className="mx-auto max-w-5xl rounded-2xl border border-[var(--gray-200)] bg-white p-8 sm:p-12">
+          <div className="grid grid-cols-1 items-center gap-8 sm:grid-cols-2">
+            <div>
+              <h2 className="text-2xl font-bold text-[var(--gray-900)] sm:text-3xl">
+                See and Feel Our Quality
+              </h2>
+              <p className="mt-4 text-base text-[var(--gray-500)]">
+                Not ready to commit? Request a free sample kit to evaluate our
+                decoration quality, garment options, and craftsmanship
+                first-hand.
+              </p>
+              <Link
+                href="/sample-kit"
+                className="mt-6 inline-block rounded-lg border border-primary px-6 py-3 text-base font-semibold text-primary transition-colors hover:bg-primary hover:text-white"
+              >
+                Request a Sample Kit
+              </Link>
+            </div>
+            <div className="flex items-center justify-center">
+              <div className="grid grid-cols-2 gap-3">
+                <div className="flex h-24 items-center justify-center rounded-lg bg-[var(--gray-50)] px-4 text-center text-sm font-medium text-[var(--gray-600)]">
+                  Method Samples
+                </div>
+                <div className="flex h-24 items-center justify-center rounded-lg bg-[var(--gray-50)] px-4 text-center text-sm font-medium text-[var(--gray-600)]">
+                  Garment Swatches
+                </div>
+                <div className="flex h-24 items-center justify-center rounded-lg bg-[var(--gray-50)] px-4 text-center text-sm font-medium text-[var(--gray-600)]">
+                  Thread Colors
+                </div>
+                <div className="flex h-24 items-center justify-center rounded-lg bg-[var(--gray-50)] px-4 text-center text-sm font-medium text-[var(--gray-600)]">
+                  Print Finishes
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -6,6 +6,9 @@ import { useEffect, useState } from "react";
 
 const navLinks = [
   { href: "/services", label: "Services" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/faqs", label: "FAQs" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -37,7 +40,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}

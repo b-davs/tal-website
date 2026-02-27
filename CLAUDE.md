@@ -74,7 +74,7 @@ We are building this site in **slices** — ship a working site fast, then layer
 /faqs/                      → FAQ center (slice 2)
 ```
 
-### Slice 1 — Foundation (CURRENT) ← UPDATE THIS AS WORK PROGRESSES
+### Slice 1 — Foundation (DONE)
 
 **Goal**: Get a real, professional site live with core pages and navigation.
 
@@ -89,16 +89,16 @@ Status key: `[ ]` = not started, `[~]` = in progress, `[x]` = done
 - [x] **Contact page** (`/contact/`): Quote request form with fields: name, email, phone, company, service needed, quantity, timeline, message, logo upload
 - [x] **SEO baseline**: Proper title tags, meta descriptions, Open Graph tags per page, JSON-LD for Organization + BreadcrumbList
 
-### Slice 2 — Conversion & Trust (NEXT)
+### Slice 2 — Conversion & Trust (DONE)
 
-- [ ] Pricing page with transparent price-driver explanations
-- [ ] Portfolio/gallery page with filterable project showcase
-- [ ] FAQ center (categorized, expandable)
-- [ ] 1-2 case study pages
-- [ ] JSON-LD for Service, FAQPage schemas
-- [ ] Sample kit request flow
+- [x] Pricing page with transparent price-driver explanations
+- [x] Portfolio/gallery page with filterable project showcase
+- [x] FAQ center (categorized, expandable)
+- [x] 1-2 case study pages
+- [x] JSON-LD for Service, FAQPage schemas
+- [x] Sample kit request flow
 
-### Slice 3 — Growth
+### Slice 3 — Growth (NEXT)
 
 - [ ] Industry vertical pages (6: construction, healthcare, hospitality, education, nonprofits, corporate)
 - [ ] Resources/guides hub

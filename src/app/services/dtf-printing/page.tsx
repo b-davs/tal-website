@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
-import { BreadcrumbJsonLd } from "@/components/JsonLd";
+import { BreadcrumbJsonLd, ServiceJsonLd, FAQPageJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Custom DTF Printing for Businesses",
@@ -12,6 +12,22 @@ export default function DTFPrintingPage() {
   return (
     <>
     <BreadcrumbJsonLd items={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: "DTF Printing", href: "/services/dtf-printing" }]} />
+    <ServiceJsonLd
+      name="Custom DTF Printing"
+      description="Full-color DTF printing on any fabric. Vibrant transfers for t-shirts, polyester, workwear, and more. No color limits, low minimums."
+      url="/services/dtf-printing"
+      serviceType="DTF Printing"
+    />
+    <FAQPageJsonLd faqs={[
+      { question: "What is DTF printing?", answer: "DTF (Direct-to-Film) printing involves printing a full-color design onto a special film, applying adhesive powder, then heat-pressing the transfer onto a garment. It works on almost any fabric type." },
+      { question: "What's the minimum order for DTF?", answer: "Minimums are low — typically as few as 1 piece for custom orders. Gang sheet pricing makes small runs especially cost-effective." },
+      { question: "Does DTF work on polyester?", answer: "Yes — this is one of DTF's biggest advantages over screen printing and DTG, which can struggle with polyester. DTF adheres beautifully to poly, nylon, and blends." },
+      { question: "How durable is DTF printing?", answer: "DTF prints are very durable when applied correctly. They withstand regular washing and drying. We recommend washing inside-out on cold for maximum longevity." },
+      { question: "Can you feel the print on the fabric?", answer: "DTF transfers have a slight texture — thinner than screen printing plastisol but not invisible. For most applications, the look and durability more than compensate." },
+      { question: "What's the difference between DTF and DTG?", answer: "DTF uses a transfer film heat-pressed onto fabric (works on any material). DTG prints directly onto the garment (works best on cotton). DTF is more versatile; DTG has a softer hand feel on cotton." },
+      { question: "Can I order just the transfers without garments?", answer: "Yes — we offer transfer-only orders. You receive ready-to-press transfers that can be applied with a heat press. Great for businesses that do their own pressing." },
+      { question: "How does gang sheeting save money?", answer: "Gang sheeting arranges multiple designs or sizes on a single film sheet, maximizing material usage. This significantly reduces cost per transfer, especially for orders with multiple designs." },
+    ]} />
     <ServicePageLayout
       title="Custom DTF Printing for Businesses"
       subtitle="DTF Printing"
